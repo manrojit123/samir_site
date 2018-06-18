@@ -1,0 +1,69 @@
+{% extends "base.twig" %} {% block content %} {% for key,item in post %}
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#myPage">Logo</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                {% for keys,item in menu.get_items %}
+                <li><a href="#myPage">{{item.title}}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="slider-area">
+    <div class="pogoSlider">
+        {% for post in slider %}
+        <div class="pogoSlider-slide" data-transition="fade" data-duration="1500" style="background:url('{{post.thumbnail.src}}') no-repeat scroll 0 0 / cover;">
+            <h2 class="pogoSlider-slide-element" data-in="slideDown" data-out="flipX" data-duration="700">{{post.main_text}}</h2>
+            <P class="pogoSlider-slide-element" data-in="expand" data-out="flipX" data-duration="1500">{{post.small_text}}</P>
+            <div class="pogoSlider-slide-element" data-in="slideUp" data-out="flipX" data-duration="700"><a href="#reservation-form-modal" class="btn btn-primary reservation_box">Reservation</a></div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h2>Welcome to <span>Blendit</span></h2>
+                <p>Morbi tortor justo, efficitur quis fermentum quis, sollicitudin vel lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per incetos himenaeos. Cras ac risus consectetur, placerat libero quis, accumsan sem.</p>
+            </div>
+            <div class="col-md-3">
+                <div id="services-box" class="">
+                    <p><img src="http://sktthemesdemo.net/blendit/wp-content/themes/blendit/images/thumb_01.jpg">
+                        <br>
+                    </p>
+                    <h2>Idea &amp; Plan</h2>
+                    <p>Donec a mattis augue. Fusce porttitor, risus ac tincidunt gravida, libero eros ullamcorper massa, ac fringilla felis magna id nisi. Vivamus tortor metus, venenatis</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div id="services-box" class="">
+                    <p><img src="http://sktthemesdemo.net/blendit/wp-content/themes/blendit/images/thumb_01.jpg">
+                        <br>
+                    </p>
+                    <h2>Idea &amp; Plan</h2>
+                    <p>Donec a mattis augue. Fusce porttitor, risus ac tincidunt gravida, libero eros ullamcorper massa, ac fringilla felis magna id nisi. Vivamus tortor metus, venenatis</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div id="services-box" class="">
+                    <p><img src="http://sktthemesdemo.net/blendit/wp-content/themes/blendit/images/thumb_01.jpg">
+                        <br>
+                    </p>
+                    <h2>Idea &amp; Plan</h2>
+                    <p>Donec a mattis augue. Fusce porttitor, risus ac tincidunt gravida, libero eros ullamcorper massa, ac fringilla felis magna id nisi. Vivamus tortor metus, venenatis</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %} {% endblock %}
