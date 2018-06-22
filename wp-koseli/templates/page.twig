@@ -1,0 +1,161 @@
+
+
+
+{% extends "base.twig" %}
+{% block content %}
+<style>
+.lang {
+    display: none;
+}
+
+.lang.current {
+    display: block;
+    color: white;
+    border-radius: 50px;
+    padding: 1px 13px;
+    margin-top: 13px;
+    border: 1px solid #ff000000;
+    background: #ffcd05;
+    font-size: 15px;
+}
+
+#np {
+    margin-top: 11px;
+    padding: 5px 13px 1px 13px;
+}
+header{
+	height: auto !important;
+}
+.header-top-area{
+	background: #d4614e;
+}
+.default_page{
+	padding-top: 180px;
+}
+</style>
+<header class="top-area" id="home" >
+    <div class="header-top-area">
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 col-lg-8 col-sm-8">
+                        <div class="call-to-action">
+                            <p><i class="fa fa-envelope-o"></i> {% if language == 'en' %} Sähköposti: <a href="mailto:{{email}}">{{email}}</a> {% else %} Email: <a href="mailto:{{email}}">{{email}}</a> {% endif %}
+                            </p>
+                            <p><i class="fa fa-phone"></i> {% if language == 'en' %} Puhelin: <a href="tel:{{telephone}}">{{telephone}}</a> {% else %} Telephone: <a href="tel:{{telephone}}">{{telephone}}</a> {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-lg-4 col-sm-4">
+                        <div class="pull-right">
+                            <ul class="list-inline" style="margin-bottom: 0px;height: 35px;">
+                                <li class="nav-link language">
+                                    <button class="lang" id="en" data-lang="np"></button>
+                                    <button class="lang" id="np" data-lang="en"></button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="book-table-popup">
+                            <a href="#reservation-form-modal" class="reservation_box" style="background:white;color:#ca3d26;">
+                                    {% if language == 'en' %}
+                                        Varata pöytä
+                                    {% else %}
+                                        Book a Table 
+                                    {% endif %}
+                                </a>
+                        </div>
+                        <div class="top-social-bookmark">
+                            <ul>
+                                <li><a href="{{facebook}}"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="{{twitter}}"><i class="fa fa-twitter"></i></a></li>
+                                <!-- <li><a href="#"><i class="fa fa-dribbble"></i></a></li> -->
+                                <!-- <li><a href="#"><i class="fa fa-behance"></i></a></li> -->
+                                <!-- <li><a href="#"><i class="fa fa-feed"></i></a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--MAINMENU AREA-->
+        <div class="mainmenu-area" id="mainmenu-area">
+            <div class="mainmenu-area-bg"></div>
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button class="collapsed navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-example-js-navbar-scrollspy">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="#home" class="navbar-brand"><img src="{{logo_1.url}}" alt="logo"></a>
+                        <a href="#home" class="navbar-brand white"><img src="{{logo_2.url}}" alt="logo"></a>
+                    </div>
+                    <div class="collapse navbar-collapse bs-example-js-navbar-scrollspy">
+                        {#
+                        <div class="search-form-area">
+                            <div class="search-form-overlay"></div>
+                            <a class="search-form-trigger" href="#search-form">Search<span></span></a>
+                            <div id="search-form" class="search-form">
+                                <form>
+                                    <input type="search" placeholder="Search...">
+                                </form>
+                            </div>
+                        </div>#}
+                        <ul id="nav" class="nav navbar-nav">
+                            {% if language == 'en' %}
+                            <li><a href="{{site.url}}/#home">Koti</a> </li>
+                            <li><a href="{{site.url}}/#about">Meistä</a></li>
+                            <!-- <li><a href="#promotion">Offer</a></li> -->
+                            <li><a href="{{site.url}}/#menu">valikko</a></li>
+                            <!-- <li><a href="#team">team</a></li> -->
+                            <!-- <li><a href="#blog">blog</a></li> -->
+                            <li><a href="{{site.url}}/#gallery">Galleria</a></li>
+                            <li><a href="{{site.url}}/#contact">Ottaa yhteyttä</a></li>
+                            {% else %}
+                            <li><a href="{{site.url}}/#home">Home</a></li>
+                            <li><a href="{{site.url}}/#about">about us</a></li>
+                            <!-- <li><a href="#promotion">Offer</a></li> -->
+                            <li><a href="{{site.url}}/#menu">Menu</a></li>
+                            <!-- <li><a href="#team">team</a></li> -->
+                            <!-- <li><a href="#blog">blog</a></li> -->
+                            <li><a href="{{site.url}}/#gallery">Gallery</a></li>
+                            <li><a href="{{site.url}}/#contact">Contact</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!--END MAINMENU AREA END-->
+    </div>
+    <!--HHOME SLIDER AREA-->
+	<section class="about-area section-padding default_page">
+	    <div class="container wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+	        <div class="row">
+	            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+	                <div class="area-title text-left">
+	                	{% if language == 'en' %}
+		        			<div class="area-title text-left">
+		        			<h2>{{post.get_field('title_finnish')}}</h2>
+                    	
+                    		</div>
+		        			<p>{{post.get_field('content_finnish')}}</p>        		
+		        		{% else %}
+		        			<div class="area-title text-center">
+			        			<h2>{{post.get_field('title')}}</h2>
+	                  		</div>
+		        				<p>{{post.get_field('content')}}</p>
+		        		{% endif %}
+
+	                </div>
+	            </div>
+
+	        </div>
+	    </div>
+	</section>
+</header>
+
+
+{% endblock %}

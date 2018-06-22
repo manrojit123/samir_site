@@ -1,0 +1,461 @@
+{% extends "base.twig" %} {% block content %} {% for key,item in post %}
+<!--START TOP AREA-->
+<style>
+.lang {
+    display: none;
+}
+
+.lang.current {
+    display: block;
+    color: white;
+    border-radius: 50px;
+    padding: 1px 13px;
+    margin-top: 13px;
+    border: 1px solid #ff000000;
+    background: #ffcd05;
+    font-size: 15px;
+}
+
+#np {
+    margin-top: 11px;
+    padding: 5px 13px 1px 13px;
+}
+.btn.fil-cat{
+    display: inline !important;
+}
+</style>
+<header class="top-area" id="home">
+    <div class="header-top-area">
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 col-lg-8 col-sm-8">
+                        <div class="call-to-action">
+                            <p><i class="fa fa-envelope-o"></i> {% if language == 'en' %} Sähköposti: <a href="mailto:{{email}}">{{email}}</a> {% else %} Email: <a href="mailto:{{email}}">{{email}}</a> {% endif %}
+                            </p>
+                            <p><i class="fa fa-phone"></i> {% if language == 'en' %} Puhelin: <a href="tel:{{telephone}}">{{telephone}}</a> {% else %} Telephone: <a href="tel:{{telephone}}">{{telephone}}</a> {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-lg-4 col-sm-4">
+                        <div class="pull-right">
+                            <ul class="list-inline" style="margin-bottom: 0px;height: 35px;">
+                                <li class="nav-link language">
+                                    <button class="lang" id="en" data-lang="np"></button>
+                                    <button class="lang" id="np" data-lang="en"></button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="book-table-popup">
+                            <a href="#reservation-form-modal" class="reservation_box">
+                                    {% if language == 'en' %}
+                                        Varata pöytä
+                                    {% else %}
+                                        Book a Table 
+                                    {% endif %}
+                                </a>
+                        </div>
+                        <div class="top-social-bookmark">
+                            <ul>
+                                <li><a href="{{facebook}}"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="{{twitter}}"><i class="fa fa-twitter"></i></a></li>
+                                <!-- <li><a href="#"><i class="fa fa-dribbble"></i></a></li> -->
+                                <!-- <li><a href="#"><i class="fa fa-behance"></i></a></li> -->
+                                <!-- <li><a href="#"><i class="fa fa-feed"></i></a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--MAINMENU AREA-->
+        <div class="mainmenu-area" id="mainmenu-area">
+            <div class="mainmenu-area-bg"></div>
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button class="collapsed navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-example-js-navbar-scrollspy">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="#home" class="navbar-brand"><img src="{{logo_1.url}}" alt="logo"></a>
+                        <a href="#home" class="navbar-brand white"><img src="{{logo_2.url}}" alt="logo"></a>
+                    </div>
+                    <div class="collapse navbar-collapse bs-example-js-navbar-scrollspy">
+                        {#
+                        <div class="search-form-area">
+                            <div class="search-form-overlay"></div>
+                            <a class="search-form-trigger" href="#search-form">Search<span></span></a>
+                            <div id="search-form" class="search-form">
+                                <form>
+                                    <input type="search" placeholder="Search...">
+                                </form>
+                            </div>
+                        </div>#}
+                        <ul id="nav" class="nav navbar-nav">
+                            {% if language == 'en' %}
+                            <li class="active"><a href="#home">Koti</a> </li>
+                            <li><a href="#about">Meistä</a></li>
+                            <!-- <li><a href="#promotion">Offer</a></li> -->
+                            <li><a href="#menu">valikko</a></li>
+                            <!-- <li><a href="#team">team</a></li> -->
+                            <!-- <li><a href="#blog">blog</a></li> -->
+                            <li><a href="#gallery">Galleria</a></li>
+                            <li><a href="#contact">Ottaa yhteyttä</a></li>
+                            {% else %}
+                            <li class="active"><a href="#home">Home</a></li>
+                            <li><a href="#about">about us</a></li>
+                            <!-- <li><a href="#promotion">Offer</a></li> -->
+                            <li><a href="#menu">Menu</a></li>
+                            <!-- <li><a href="#team">team</a></li> -->
+                            <!-- <li><a href="#blog">blog</a></li> -->
+                            <li><a href="#gallery">Gallery</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!--END MAINMENU AREA END-->
+    </div>
+    <!--HHOME SLIDER AREA-->
+    <div class="slider-area">
+        <div class="pogoSlider">
+            {% for post in slider %}
+            <div class="pogoSlider-slide" data-transition="fade" data-duration="1500" style="background:url('{{post.thumbnail.src}}') no-repeat scroll 0 0 / cover;">
+                <h2 class="pogoSlider-slide-element" data-in="slideDown" data-out="flipX" data-duration="700">
+                                {% if language == 'en' %}
+                                    {{post.top_text_finnish}}
+                                {% else %}
+                                    {{post.top_text}}
+                                {% endif %}
+                            </h2>
+                <h1 class="pogoSlider-slide-element" data-in="expand" data-out="flipX" data-duration="1500">
+                                {% if language == 'en' %}
+                                    {{post.bottom_text_finnish}}
+                                {% else %}
+                                    {{post.bottom_text}}
+                                {% endif %}
+                            </h1>
+                <h3 class="pogoSlider-slide-element" data-in="slideUp" data-out="flipX" data-duration="700"><a  href="#reservation-form-modal" class="reservation_box">
+                                {% if language == 'en' %}
+                                    Varaus
+                                {% else %}
+                                    Reservation
+                                {% endif %}
+                            </a></h3>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!--HOME SLIDER AREA END-->
+</header>
+<!--END TOP AREA-->
+<!--ABOUT AREA-->
+<section class="about-area section-padding" id="about">
+    <div class="container wow fadeIn">
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                <div class="area-title text-center">
+                    <h2>
+                                {% if language == 'en' %}                                    
+                                    Meidän tarinamme
+                                {% else %}
+                                    Our Story
+                                {% endif %}
+                            </h2>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                <div class="about-content">
+                    <!-- <p><span class="big-text">M</span> enc non elit libero. Quisque massa porta ut placerat lentesque non diam. Nam convallis porta rhoncus. Maecenas varius eget turpis suscipit porta sapien tinc Mauris tempor libero fringilla orci vivrra faucibue fringilla orci vivrra faucibus. Integer ullamcorper erat in tellus efficitur, quis porta sapien tincidunt. Nunc mattis lectus sed semper semper. </p> -->
+                    <p>
+                        {% if language == 'en' %} {{item.get_field('left_story_finnish')}} {% else %} {{item.get_field('left_story')}} {% endif %}
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                <div class="right-about-content">
+                    <p>
+                        {% if language == 'en' %} {{item.get_field('right_story_finnish')}} {% else %} {{item.get_field('right_story')}} {% endif %}
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                <div class="about-author-sign text-center">
+                    <!-- <img src="img/about/about_sign.png" alt=""> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--ABOUT AREA END-->
+
+
+
+<!--MENUS AREA-->
+<section class="menus-area section-padding" id="menu">
+    <div class="container wow fadeIn">
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                <div class="area-title text-center">
+                    <h2>
+                        {% if language == 'en' %}
+                            Valikoimamme
+                        {% else %}
+                            Our Menu
+                        {% endif %}
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="container food_main">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="list-inline text-center">
+                    <li>
+                        <button type="button" class="btn btn-lg btn_rest" data-toggle="modal" data-target="#alacarte">{% if language == 'en' %}A-LA-CARTE {% else %}A-LA-CARTE{% endif %}</button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-lg btn_rest" data-toggle="modal" data-target="#lunch">{% if language == 'en' %}LOUNAS {% else %}LUNCH{% endif %}</button>
+                    </li>
+                </ul>
+                <!-- Modal -->
+                <div id="alacarte" class="modal fade" role="dialog">
+                    <div class="modal-dialog modal-lg">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">{% if language == 'en' %}A-LA-CARTE {% else %}A-LA-CARTE{% endif %}</h4>
+                            </div>
+
+                            {% if language == 'en' %}
+                                <div class="modal-body">
+                                    <div class="toolbar mb2 mt2 text-center">
+                                        
+                                        
+                                        <button class="btn fil-cat-new active" data-rel="starter">ALKURUOAT</button>
+                                        <button class="btn fil-cat-new" data-rel="maincourse">PÄÄATERIA</button>
+                                        <button class="btn fil-cat-new" data-rel="groups">JÄLKIRUOAT</button>
+                                        <button class="btn fil-cat-new" data-rel="desserts">JUOMAT</button>
+                                        <button class="btn fil-cat-new" data-rel="drinks">RYHMÄMENUT</button>
+                                    </div>
+                                    <div style="clear:both;"></div>
+                                    <div id="portfolio-new">
+                                        {% for key,post in ala_menu %}
+                                        <div class="tile scale-anm {{post.ala_type_finnish}}">
+                                            <div class="row" style="padding:15px 15px 12px 0px;margin-right:0px">
+                                                <div class="col-md-2 col-xs-3">
+                                                    <img src="{{ post.thumbnail.src }}" alt="">
+                                                </div>
+                                                <div class="col-md-10 col-xs-9">
+                                                    <h3>{{post.get_field('menu_name_finnish')}} {% if post.get_field('price') %}<span class="menu-price">{{post.get_field('price')}}{{price_sign}}</span>{% endif %}</h3>
+                                                    <p>{{post.get_field('recipe_finnish')}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="clear:both;"></div>
+                                        {% endfor %}
+                                    </div>                            
+                                </div>
+                            {% else %}
+                                <div class="modal-body">
+                                    <div class="toolbar mb2 mt2 text-center">
+                                        <button class="btn fil-cat-new active" data-rel="starter">Starter</button>
+                                        <button class="btn fil-cat-new" data-rel="maincourse">Main Course</button>
+                                        <button class="btn fil-cat-new" data-rel="groups">Groups</button>
+                                        <button class="btn fil-cat-new" data-rel="desserts">Desserts</button>
+                                        <button class="btn fil-cat-new" data-rel="drinks">Drinks</button>
+                                        
+                                    </div>
+                                    <div style="clear:both;"></div>
+                                    <div id="portfolio-new">
+                                        {% for key,post in ala_menu %}
+                                        <div class="tile scale-anm {{post.ala_type}}">
+                                            <div class="row" style="padding:15px 15px 12px 0px;margin-right:0px">
+                                                <div class="col-md-2 col-xs-3">
+                                                    <img src="{{ post.thumbnail.src }}" alt="">
+                                                </div>
+                                                <div class="col-md-10 col-xs-9">
+                                                    <h3>{{post.get_field('menu_name')}} {% if post.get_field('price') %}<span class="menu-price">{{post.get_field('price')}}{{price_sign}}</span>{% endif %}</h3>
+                                                    <p>{{post.get_field('recipe')}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="clear:both;"></div>
+                                        {% endfor %}
+                                    </div>                            
+                                </div>
+                            {% endif %}
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default btn_rest" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal -->
+                <div id="lunch" class="modal fade" role="dialog">
+                    <div class="{{day}}" id="day"></div>
+                    <div class="modal-dialog modal-lg">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">{% if language == 'en' %}LOUNAS {% else %}LUNCH{% endif %}</h4>
+                            </div>
+                            {% if language == 'en' %}
+                                <div class="modal-body">
+                                    <div class="toolbar mb2 mt2 text-center">
+                                        <button class="btn fil-cat mon" data-rel="mon">maanantai</button>
+                                        <button class="btn fil-cat tue" data-rel="tue">tiistai</button>
+                                        <button class="btn fil-cat wed" data-rel="wed">keskiviikko</button>
+                                        <button class="btn fil-cat thurs" data-rel="thurs">torstai</button>
+                                        <button class="btn fil-cat fri" data-rel="fri">perjantai</button>
+                                    </div>
+                                    <div style="clear:both;"></div>
+                                    <div id="portfolio">
+                                        {% for key,post in lun_menu %}
+                                        <div class="tile scale-anm {{post.type}}">  
+                                            <div class="row" style="padding:15px 15px 12px 0px;margin-right:0px">
+                                                <div class="col-md-2 col-xs-3">
+                                                    <img src="{{ post.thumbnail.src }}" alt="">                                                
+                                                </div>
+                                                <div class="col-md-10 col-xs-9">
+                                                    <h3>{{post.get_field('menu_name_finnish')}} {% if post.get_field('price') %}<span class="menu-price">{{post.get_field('price')}}{{price_sign}}</span>{% endif %}</h3>
+                                                    <p>{{post.get_field('recipe_finnish')}}</p>                                                
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="clear:both;"></div>
+                                        {% endfor %}
+                                    </div>
+                                </div>                                
+                            {% else %}
+                                <div class="modal-body">
+                                    <div class="toolbar mb2 mt2 text-center">
+                                        <button class="btn fil-cat mon" data-rel="mon">Monday</button>
+                                        <button class="btn fil-cat tue" data-rel="tue">Tuesday</button>
+                                        <button class="btn fil-cat wed" data-rel="wed">Wednesday</button>
+                                        <button class="btn fil-cat thurs" data-rel="thurs">Thursday</button>
+                                        <button class="btn fil-cat fri" data-rel="fri">Friday</button>
+                                    </div>
+                                    <div style="clear:both;"></div>
+                                    <div id="portfolio">
+                                        {% for key,post in lun_menu %}
+                                        <div class="tile scale-anm {{post.type}}">
+                                            <div class="row" style="padding:15px 15px 12px 0px;margin-right:0px">
+                                                <div class="col-md-2 col-xs-3">
+                                                    <img src="{{ post.thumbnail.src }}" alt="">
+                                                </div>
+                                                <div class="col-md-10 col-xs-9">
+                                                    <h3>{{post.get_field('menu_name')}} {% if post.get_field('price') %}<span class="menu-price">{{post.get_field('price')}}{{price_sign}}</span>{% endif %}</h3>
+                                                    <p>{{post.get_field('recipe')}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="clear:both;"></div>
+                                        {% endfor %}
+                                    </div>                                    
+                                </div>
+                            {% endif %}
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default btn_rest" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--MENUS AREA END-->
+<!--MENUS AREA END-->
+
+
+
+<!--RESERVATION BUTTON AREA-->
+<section class="reservation-button-area section-padding" id="reservation-button">
+    <div class="reservation-button-area-bg" data-stellar-background-ratio="0.6" style="background:rgba(0, 0, 0, 0) url('{{bookTable_bg.url}}') no-repeat scroll center center / cover"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                <div class="resarvation-from-button text-center wow fadeIn">
+                    <h2>
+                        {% if language == 'en' %}
+                            Varaa pöytä nyt
+                        {% else %}
+                            Book A table Now !
+                        {% endif %}
+                    </h2>
+                    <a href="#reservation-form-modal" class="reservation-button reservation_box">
+                        {% if language == 'en' %}
+                            Varaa nyt
+                        {% else %}
+                            Book Now
+                        {% endif %}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--RESERVATION BUTTON AREA END-->
+
+
+
+<!--INSTAGRAM GALLERY FEED-->
+<section class="gallery-area section-padding" id="gallery">
+    <div class="container wow fadeIn">
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                <div class="area-title text-center">
+                    <h2>
+                        {% if language == 'en' %}
+                            Galleria
+                        {% else %}
+                            Gallery
+                        {% endif %}
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                <div class="instagram-feed-content text-center">
+                    <div class="instagram" id="instagram"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--INSTAGRAM GALLERY FEED END-->
+
+
+
+<!--RESERVATION FORM-->
+<section class="reservation  section-padding" id="reservation-form-modal">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 table-booking-form">
+                <div class="area-title text-center">
+                    <h2 class="h2_white">
+                        {% if language == 'en' %}
+                            Varaus
+                        {% else %}
+                            Reservation
+                        {% endif %}
+                    </h2>
+                </div>
+                {% if language == 'en' %} {{'[contact-form-7 id="230" title="reservation_finnish"]' | shortcodes}} {% else %} {{'[contact-form-7 id="207" title="reservation"]' | shortcodes}} {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+<!--RESERVATION FORM END-->
+{% endfor %} {% endblock %}

@@ -29,16 +29,22 @@ $(document).ready(function() {
             /*---------------------------
                 SMOOTH SCROLL
             -----------------------------*/
-            $('a.scrolltotop, .slider-area h3 a, .navbar-header a, ul#nav a,a.reservation_box').on('click', function(event) {
-                var id = $(this).attr("href");
-                var offset = 40;
-                var target = $(id).offset().top - offset;
-                $('html, body').animate({
-                    scrollTop: target
-                }, 1500, "easeInOutExpo");
-                event.preventDefault();
-            });
-
+            // $('a.scrolltotop, .slider-area h3 a, .navbar-header a, ul#nav a,a.reservation_box').on('click', function(event) {
+            //     var id = $(this).attr("href");
+            //     var offset = 40;
+            //     var target = $(id).offset().top - offset;
+            //     $('html, body').animate({
+            //         scrollTop: target
+            //     }, 1500, "easeInOutExpo");
+            //     event.preventDefault();
+            // });
+                    $('.page-scroll a').bind('click', function(event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: ($($anchor.attr('href')).offset().top - 50)
+        }, 1250, 'easeInOutExpo');
+        event.preventDefault();
+    });
 
             /*----------------------------
                 SCROLL TO TOP
@@ -72,4 +78,13 @@ $(document).ready(function() {
                 $(".preeloader").fadeOut(1000);
             });
 
+
+
+
+            /*---------------------------------
+                Filter Gallery
+            ----------------------------------*/
+
+
 });
+

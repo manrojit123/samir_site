@@ -1,0 +1,48 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js ie ie6 lt-ie9 lt-ie8 lt-ie7" {{site.language_attributes}}> <![endif]-->
+<!--[if IE 7]><html class="no-js ie ie7 lt-ie9 lt-ie8" {{site.language_attributes}}> <![endif]-->
+<!--[if IE 8]><html class="no-js ie ie8 lt-ie9" {{site.language_attributes}}> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" {{site.language_attributes}}> <!--<![endif]-->
+<head>
+    <meta charset="{{site.charset}}" />
+        <title>   
+            {% if wp_title %}
+                {{ wp_title }} - {{ site.name }}
+            {% else %}
+                {{ site.name }}
+            {% endif %}
+        </title>
+    <meta name="description" content="{{site.description}}">
+    <link rel="stylesheet" href="{{site.theme.link}}/style.css" type="text/css" media="screen" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="pingback" href="{{site.pingback_url}}" />
+    
+    <!--====== FAVICON ICON =======-->
+    <!-- <link rel="shortcut icon" type="image/ico" href="img/favicon.png" /> -->
+
+    <!--====== STYLESHEETS ======-->
+    <link rel="stylesheet" href="{{theme.link}}/assets/css/normalize.css">
+    <link rel="stylesheet" href="{{theme.link}}/assets/css/animate.css">
+    <link rel="stylesheet" href="{{theme.link}}/assets/css/pogo-slider.css">
+    <link rel="stylesheet" href="{{theme.link}}/assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="{{theme.link}}/assets/css/datepicker.css">
+    <link rel="stylesheet" href="{{theme.link}}/assets/css/timepicker.min.css">
+    <link rel="stylesheet" href="{{theme.link}}/assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="{{theme.link}}/assets/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="{{theme.link}}/assets/css/font-awesome.min.css">
+
+    <!--====== MAIN STYLESHEETS ======-->
+    <link rel="stylesheet" href="{{theme.link}}/style.css">
+    <link rel="stylesheet" href="{{theme.link}}/assets/css/responsive.css">
+
+    <script src="{{theme.link}}/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    {{function('wp_head')}}
+</head>
+
