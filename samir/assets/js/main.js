@@ -38,13 +38,13 @@ $(document).ready(function() {
             //     }, 1500, "easeInOutExpo");
             //     event.preventDefault();
             // });
-                    $('.page-scroll a').bind('click', function(event) {
-        var $anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: ($($anchor.attr('href')).offset().top - 50)
-        }, 1250, 'easeInOutExpo');
-        event.preventDefault();
-    });
+            $('.page-scroll a').bind('click', function(event) {
+                var $anchor = $(this);
+                $('html, body').stop().animate({
+                    scrollTop: ($($anchor.attr('href')).offset().top - 50)
+                }, 1250, 'easeInOutExpo');
+                event.preventDefault();
+            });
 
             /*----------------------------
                 SCROLL TO TOP

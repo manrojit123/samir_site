@@ -25,6 +25,7 @@ class StarterSite extends TimberSite {
 		add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
+		register_nav_menus(array('main_menu' => 'Main Menu' ) );
 		parent::__construct();
 	}
 
@@ -41,6 +42,7 @@ class StarterSite extends TimberSite {
 		$context['stuff'] = 'I am a value set in your functions.php file';
 		$context['notes'] = 'These values are available everytime you call Timber::get_context();';
 		$context['menu'] = new TimberMenu();
+		$context['main_menu'] = new TimberMenu('main_menu');
 		$context['site'] = $this;
 		return $context;
 	}

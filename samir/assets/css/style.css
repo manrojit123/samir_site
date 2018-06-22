@@ -1,0 +1,421 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,400i,700');
+body {
+        font-family: 'Roboto Condensed', sans-serif  !important;
+        color: #777;
+        font-size: 14px;
+        font-weight: 300;
+    }
+
+    h3,
+    h4 {
+        margin: 10px 0 30px 0;
+        /*letter-spacing: 10px;*/
+        font-size: 20px;
+        color: #111;
+    }
+    h3.title{
+            font-weight: 700;
+    padding: 0 0 15px 0;
+    text-align: center;
+    text-transform: uppercase;
+    /*border-bottom: 2px solid;*/
+    display: table;
+    margin:0 auto 0px auto;
+    font-size: 30px;
+    }
+    .title_hr{
+        border-top-color: #000;
+        border-top-width: 2px;
+    }
+    .text-white{
+        color:white;
+    }
+    .btn-blank{
+        background: none;
+        border: 2px solid white;
+        color: white;
+    }
+    p.highlighted{
+
+    }
+    h3.highlighted{
+        color: #666666;
+        font-size: 36px;
+        font-weight: 300;
+    }
+
+
+
+    section{
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .slider-area{
+        position: relative;
+    top: -25px;
+    }
+    h2.pogoSlider-slide-element{
+        font-size: 3em;
+        color: white;
+        font-weight: 700;
+    }
+    p.pogoSlider-slide-element{
+        font-size: 1em;
+        padding:0vw 10vw;
+        color: white;
+    }
+    @media (max-width: 600px) {
+        .carousel-caption {
+            display: none;
+            /* Hide the carousel text when the screen is less than 600 pixels wide */
+        }
+    }
+.skill {
+        margin-bottom: 35px;
+        position: relative;
+            overflow:hidden;
+            text-align: left;
+			
+    }
+    .skill > p {
+        font-size: 18px;
+        font-weight: 700;
+        color: #1a1716;
+        margin: 0;
+    }
+    .skill:before{
+        width: 100%;
+        height: 25px;
+        content: "";
+        display: block;
+        position: absolute;
+        background: #191919;
+        bottom: 0;
+    }
+    .skill-bar {
+        width: 100%;
+        height: 25px;
+        background:#f4392f;
+        display: block;
+        position: relative;
+    }
+
+
+    .skill-bar span{
+        position: absolute;
+        /* border-top: 5px solid #f4392f; */
+        top: -2px;
+        padding: 0;
+        font-size: 18px;
+        padding: 3px 0;
+        font-weight: 500;
+        color: #191919;
+    }
+    .skill-bar {
+        position: relative;
+			
+    }
+
+    .skill1 .skill-count1 {
+        right:10px;;
+    }
+    /* SKILL 2 */
+   
+
+
+
+
+
+    .nav-tabs li a {
+        color: #777;
+    }
+
+    #googleMap {
+        width: 100%;
+        height: 400px;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+    }
+
+    .navbar {
+        font-family: "Roboto Condensed", sans-serif;
+        margin-bottom: 0;
+        background-color: #2d2d30;
+        border: 0;
+        font-size: 15px !important;
+        /*letter-spacing: 4px;*/
+        opacity: 0.9;
+    }
+
+    .navbar li a,
+    .navbar .navbar-brand {
+        color: #d5d5d5 !important;
+        text-transform: uppercase;
+    }
+
+    .navbar-nav li a:hover {
+        color: #fff !important;
+    }
+
+    .navbar-nav li.active a {
+        color: #fff !important;
+        background-color: #29292c !important;
+    }
+
+    .navbar-default .navbar-toggle {
+        border-color: transparent;
+    }
+
+    .open .dropdown-toggle {
+        color: #fff;
+        background-color: #555 !important;
+    }
+
+    .dropdown-menu li a {
+        color: #000 !important;
+    }
+
+    .dropdown-menu li a:hover {
+        background-color: red !important;
+    }
+
+    .pogoSlider {
+        height: 95vh;
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        width: 100%;
+        padding-bottom: 0;
+    }
+
+    .pogoSlider-slide {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        background-size: cover;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        height: 100%;
+        opacity: 0;
+        overflow: hidden;
+        -webkit-perspective: 1300px;
+        perspective: 1300px;
+        position: absolute;
+        width: 100%;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding-top: 5%;
+    }
+
+    #services-box {
+        height: auto;
+        display: inline-block;
+        text-align: center;
+        position: relative;
+        background-color: #ffffff;
+        border: 1px solid#dfdfdf;
+        padding:15px;
+    }
+    #services-box p {
+      line-height: 20px;
+    }
+    #services-box h2, .fourbox h2, #contact .column-2 h2 {
+    color: #444444;
+    }
+    #services-box h2 {
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 0 0 20px;
+    }
+    #services-box:hover, .fourbox:hover {
+        border: 1px solid transparent;
+        border-bottom: 2px solid#ff5c55;
+        background-color: #f6f6f8;
+        cursor: pointer;
+        
+
+    }
+    #services-box:hover h2, .fourbox:hover h2, .bx-wrapper .testimonials-name {
+    color: #ff5c55;
+}
+#about{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+
+#whoAreWe{
+    background: #ff554e;
+    position: relative;
+}
+.side_text{
+    padding:47px 60px 116px 22px;
+}
+.side_image{
+        background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    float: right;
+    overflow: hidden;
+    margin: 0;
+}
+.side_image img{
+        background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    float: right;
+    overflow: hidden;
+    margin: 0;
+}
+#moreAboutUs{
+    padding:30px;
+    background: #f8f8f8;
+}
+#moreAboutUs .fourbox{
+    border-bottom:2px solid #dedee0;
+}
+#slider{
+        background-color: #ffffff;
+    background-image: url(http://sktthemesdemo.net/blendit/wp-content/themes/blendit/images/testimonial_bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-height: 35vh;
+}
+
+.blog_box_wrapper{
+    position: relative;
+}
+.cat_comments{
+        position: absolute;
+    bottom: 0;
+    background: rgba(255, 85, 78, 0.8);
+    width: 100%;
+    height: 45px;
+    padding: 0px 12px;
+}
+.cat_comments h5:nth-child(1){
+    display: inline-block;
+    color: white;
+}
+
+
+.cat_comments h5:nth-child(2){
+    display: inline-block;
+    float: right;
+    color: white;
+}
+.cat_comments h5 a{
+    padding-left: 10px;
+    color:white;
+}
+.cat_comments h5:nth-child(2) i{
+    margin-right: 10px;
+}
+
+.cat_comments h5 i{
+   background: #424242;
+    padding: 6px;
+    font-size: 15px;
+    border-radius: 500px;
+}
+
+
+#CoreFeature{
+    background: #f3f3f3;
+}
+#team{
+        background-color: #f8f8f8;
+}
+#team a i{
+    color:#000;
+}
+.team_member_social li{
+    border-right:1px solid red;
+}
+.team_member_social li:last-child{
+    border-right: 0px;
+}
+
+    /* Create three equal columns that floats next to each other */
+
+    .column {
+        float: left;
+        width: 25%;
+        display: none;
+        /* Hide all elements by default */
+    }
+    /* Clear floats after rows */
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    /* Content */
+
+    .content {
+        background-color: white;
+    }
+    /* The "show" class is added to the filtered elements */
+
+    .show {
+        display: block;
+    }
+    /* Style the buttons */
+
+    .btn-filter {
+        border: none;
+        outline: none;
+        padding: 5px 15px;
+        color: #666;
+        text-transform: uppercase;
+        background-color: white;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    .btn-filter:hover {
+        background-color: #ddd;
+    }
+
+    .btn-filter.active {
+        background-color: #ff554e;
+        color: white;
+    }
+       
+    footer {
+        background-color: #2d2d30;
+        color: #f5f5f5;
+        padding: 32px;
+    }
+
+    footer a {
+        color: #f5f5f5;
+    }
+
+    footer a:hover {
+        color: #777;
+        text-decoration: none;
+    }
+
+    .form-control {
+        border-radius: 0;
+    }
+
+    textarea {
+        resize: none;
+    }

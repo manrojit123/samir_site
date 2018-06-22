@@ -17,7 +17,7 @@ $context['slider'] = Timber::get_posts( $slider_args );
 
 
 // echo "<pre>";
-//  var_dump($slider_args);
+//  var_dump($context['slider']);
 //  echo "</pre>";
 //  die();
 
