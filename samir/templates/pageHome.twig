@@ -21,54 +21,18 @@
 <div class="slider-area">
     <div class="pogoSlider">
         {% for post in slider %}
-            <div class="pogoSlider-slide" data-transition="fade" data-duration="1500" style="background:url('{{Image(post.background).src}}') no-repeat scroll 0 0 / cover;">
-                <h2 class="pogoSlider-slide-element" data-in="slideDown" data-out="fade" data-duration="700">{{post.main_text}}</h2>
-                <P class="pogoSlider-slide-element" data-in="expand" data-out="fade" data-duration="1500">{{post.small_text}}</P>
-                <div class="pogoSlider-slide-elemen"><a href="#reservation-form-modal" class="btn btn-primary reservation_box">Reservation</a></div>
-                {# <div class="pogoSlider-slide-element" data-in="slideUp" data-out="flipX" data-duration="700"><a href="#reservation-form-modal" class="btn btn-primary reservation_box">Reservation</a></div> #}
-            </div>
+        <div class="pogoSlider-slide" data-transition="fade" data-duration="1500" style="background:url('{{Image(post.background).src}}') no-repeat scroll 0 0 / cover;">
+            <h2 class="pogoSlider-slide-element" data-in="slideDown" data-out="fade" data-duration="700">{{post.main_text}}</h2>
+            <P class="pogoSlider-slide-element" data-in="expand" data-out="fade" data-duration="1500">{{post.small_text}}</P>
+            <div class="pogoSlider-slide-elemen"><a href="#reservation-form-modal" class="btn btn-primary reservation_box">Reservation</a></div>
+            {#
+            <div class="pogoSlider-slide-element" data-in="slideUp" data-out="flipX" data-duration="700"><a href="#reservation-form-modal" class="btn btn-primary reservation_box">Reservation</a></div> #}
+        </div>
         {% endfor %}
     </div>
 </div>
-<section id="about">
-    <div class="container">
-        <div class="row wow bounceIn">
-            <div class="col-md-3">
-                <h2>Welcome to <span>Blendit</span></h2>
-                <p>Morbi tortor justo, efficitur quis fermentum quis, sollicitudin vel lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per incetos himenaeos. Cras ac risus consectetur, placerat libero quis, accumsan sem.</p>
-            </div>
-            <div class="col-md-3">
-                <div id="services-box" class="">
-                    <p><img src="http://sktthemesdemo.net/blendit/wp-content/themes/blendit/images/thumb_01.jpg">
-                        <br>
-                    </p>
-                    <h2>Idea &amp; Plan</h2>
-                    <p>Donec a mattis augue. Fusce porttitor, risus ac tincidunt gravida, libero eros ullamcorper massa, ac fringilla felis magna id nisi. Vivamus tortor metus, venenatis</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div id="services-box" class="">
-                    <p><img src="http://sktthemesdemo.net/blendit/wp-content/themes/blendit/images/thumb_01.jpg">
-                        <br>
-                    </p>
-                    <h2>Idea &amp; Plan</h2>
-                    <p>Donec a mattis augue. Fusce porttitor, risus ac tincidunt gravida, libero eros ullamcorper massa, ac fringilla felis magna id nisi. Vivamus tortor metus, venenatis</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div id="services-box" class="">
-                    <p><img src="http://sktthemesdemo.net/blendit/wp-content/themes/blendit/images/thumb_01.jpg">
-                        <br>
-                    </p>
-                    <h2>Idea &amp; Plan</h2>
-                    <p>Donec a mattis augue. Fusce porttitor, risus ac tincidunt gravida, libero eros ullamcorper massa, ac fringilla felis magna id nisi. Vivamus tortor metus, venenatis</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<section id="whoAreWe">
+<section id="about" class="whoAreWe">
     <div class="container">
         <div class="row">
             <div class="col-md-6 side_text wow slideIneft">
@@ -82,7 +46,6 @@
         </div>
     </div>
 </section>
-
 <section id="moreAboutUs">
     <div class="container">
         <div class="row">
@@ -122,7 +85,6 @@
         </div>
     </div>
 </section>
-
 <section id="CoreFeature">
     <div class="container">
         <div class="row">
@@ -138,7 +100,6 @@
         </div>
     </div>
 </section>
-
 <section id="services">
     <div class="container">
         <div class="row">
@@ -146,7 +107,6 @@
                 <h3 class="text-uppercase title">what we do <hr class="title_hr">  </h3>
                 <h3 class="highlighted">Providing amazing services to our client worldwide</h3>
             </div>
-
             <div class="col-md-3 text-center wow bounceInDown">
                 <div class="fourbox">
                     <img src="http://sktthemesdemo.net/blendit/wp-content/themes/blendit/images/thumb_05.jpg" alt="" class="img-responsive text-center" style="margin:0 auto;">
@@ -178,7 +138,6 @@
         </div>
     </div>
 </section>
-
 <section id="ourSkills">
     <div class="container">
         <row>
@@ -189,26 +148,23 @@
                     <div class="skill-bar skill1 wow slideInLeft animated" style="width:95%">
                         <span class="skill-count1">95%</span>
                     </div>
-                </div> 
-                
+                </div>
                 <div class="skill">
                     <p>HTML5</p>
                     <div class="skill-bar skill1 wow slideInLeft animated" style="width:65%">
                         <span class="skill-count1">65%</span>
                     </div>
-                </div> 
-                
+                </div>
                 <div class="skill">
                     <p>HTML5</p>
                     <div class="skill-bar skill1 wow slideInLeft animated" style="width:25%">
                         <span class="skill-count1">25%</span>
                     </div>
-                </div>               
+                </div>
             </div>
         </row>
     </div>
 </section>
-
 <section id="slider">
     <container>
         <row>
@@ -218,7 +174,6 @@
         </row>
     </container>
 </section>
-
 <section id="portfolio">
     <div class="container-fluid ">
         <div class="col-md-12">
@@ -226,201 +181,257 @@
         </div>
         <div class="main">
             <section id="myBtnContainer" class="text-center">
-                <button class="btn-filter active" onclick="filterSelection('all')"> Show all</button>
+                {% for key,post in works %} {% if var == 0 %}
+                <button class="btn-filter active" onclick="filterSelection(all)">All</button>
+                {% else %}
+                <button class="btn-filter" onclick="filterSelection('{{post}}')">{{post}}</button>
+                {% endif %} {% set var = var + 1 %} {% endfor %}
+                <!-- <button class="btn-filter active" onclick="filterSelection('all')"> Show all</button>
                 <button class="btn-filter" onclick="filterSelection('nature')"> Nature</button>
                 <button class="btn-filter" onclick="filterSelection('cars')"> Cars</button>
-                <button class="btn-filter" onclick="filterSelection('people')"> People</button>
-            </div>
-            <!-- Portfolio Gallery Grid -->
-            <div class="row wow bounceIn">
-                <div class="column nature">
-                    <div class="content">
-                        <img src="https://www.w3schools.com/w3images/mountains.jpg" alt="Mountains" style="width:100%">
-                        <h4 class="hide">Mountains</h4>
-                        
-                    </div>
-                </div>
-                <div class="column nature">
-                    <div class="content">
-                        <img src="https://www.w3schools.com/w3images/lights.jpg" alt="Lights" style="width:100%">
-                        <h4 class="hide">Lights</h4>
-                        
-                    </div>
-                </div>
-                <div class="column nature">
-                    <div class="content">
-                        <img src="https://www.w3schools.com/w3images/nature.jpg" alt="Nature" style="width:100%">
-                        <h4 class="hide">Forest</h4>
-                        
-                    </div>
-                </div>
-                <div class="column cars">
-                    <div class="content">
-                        <img src="https://www.w3schools.com/w3images/cars1.jpg" alt="Car" style="width:100%">
-                        <h4 class="hide">Retro</h4>
-                        
-                    </div>
-                </div>
-                <div class="column cars">
-                    <div class="content">
-                        <img src="https://www.w3schools.com/w3images/cars2.jpg" alt="Car" style="width:100%">
-                        <h4 class="hide">Fast</h4>
-                        
-                    </div>
-                </div>
-                <div class="column cars">
-                    <div class="content">
-                        <img src="https://www.w3schools.com/w3images/cars3.jpg" alt="Car" style="width:100%">
-                        <h4 class="hide">Classic</h4>
-                        
-                    </div>
-                </div>
-                <div class="column people">
-                    <div class="content">
-                        <img src="https://www.w3schools.com/w3images/people1.jpg" alt="Car" style="width:100%">
-                        <h4 class="hide">Girl</h4>
-                        
-                    </div>
-                </div>
-                <div class="column people">
-                    <div class="content">
-                        <img src="https://www.w3schools.com/w3images/people2.jpg" alt="Car" style="width:100%">
-                        <h4 class="hide">Man</h4>
-                        
-                    </div>
-                </div>
-                <div class="column people">
-                    <div class="content">
-                        <img src="https://www.w3schools.com/w3images/people3.jpg" alt="Car" style="width:100%">
-                        <h4 class="hide">Woman</h4>
-                        
-                    </div>
-                </div>
-                <!-- END GRID -->
-            </div>
-            <!-- END MAIN -->
+                <button class="btn-filter" onclick="filterSelection('people')"> People</button> -->
         </div>
-    </div>
-</section>
-
-
-
-
-
-
-<section id="blog">
-    <div class="container">
-        <div class="row ">
-            <div class="col-md-12 text-center">
-                <h3 class="text-uppercase title">Blog<hr class="title_hr"> </h3>
+        <!-- Portfolio Gallery Grid -->
+        <div class="row wow bounceIn">
+            <div class="column nature">
+                <div class="content">
+                    <img src="https://www.w3schools.com/w3images/mountains.jpg" alt="Mountains" style="width:100%">
+                    <h4 class="hide">Mountains</h4>
+                </div>
             </div>
-            <div class="col-sm-4 wow bounce">                
+            <div class="column nature">
+                <div class="content">
+                    <img src="https://www.w3schools.com/w3images/lights.jpg" alt="Lights" style="width:100%">
+                    <h4 class="hide">Lights</h4>
+                </div>
+            </div>
+            <div class="column nature">
+                <div class="content">
+                    <img src="https://www.w3schools.com/w3images/nature.jpg" alt="Nature" style="width:100%">
+                    <h4 class="hide">Forest</h4>
+                </div>
+            </div>
+            <div class="column cars">
+                <div class="content">
+                    <img src="https://www.w3schools.com/w3images/cars1.jpg" alt="Car" style="width:100%">
+                    <h4 class="hide">Retro</h4>
+                </div>
+            </div>
+            <div class="column cars">
+                <div class="content">
+                    <img src="https://www.w3schools.com/w3images/cars2.jpg" alt="Car" style="width:100%">
+                    <h4 class="hide">Fast</h4>
+                </div>
+            </div>
+            <div class="column cars">
+                <div class="content">
+                    <img src="https://www.w3schools.com/w3images/cars3.jpg" alt="Car" style="width:100%">
+                    <h4 class="hide">Classic</h4>
+                </div>
+            </div>
+            <div class="column people">
+                <div class="content">
+                    <img src="https://www.w3schools.com/w3images/people1.jpg" alt="Car" style="width:100%">
+                    <h4 class="hide">Girl</h4>
+                </div>
+            </div>
+            <div class="column people">
+                <div class="content">
+                    <img src="https://www.w3schools.com/w3images/people2.jpg" alt="Car" style="width:100%">
+                    <h4 class="hide">Man</h4>
+                </div>
+            </div>
+            <div class="column people">
+                <div class="content">
+                    <img src="https://www.w3schools.com/w3images/people3.jpg" alt="Car" style="width:100%">
+                    <h4 class="hide">Woman</h4>
+                </div>
+            </div>
+            <!-- END GRID -->
+        </div>
+        <!-- END MAIN -->
+    </div>
+    </div>
+    </section>
+    <section id="blog">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-12 text-center">
+                    <h3 class="text-uppercase title">Blog<hr class="title_hr"> </h3>
+                </div>
+                <div class="col-sm-4 wow bounce">
                     <div class="blog_box_wrapper">
                         <img src="http://sktthemesdemo.net/blendit/wp-content/uploads/2013/10/4076191146_3e3c754b05_z.jpg" alt="Paris" class="img-responsive">
                         <div class="cat_comments">
                             <h5><i class="fa fa-list"></i><a href="">Blog</a></h5>
-                            <h5><i class="fa fa-comments"></i><span>1 Comments</span></h5>                            
+                            <h5><i class="fa fa-comments"></i><span>1 Comments</span></h5>
                         </div>
                     </div>
                     <h4 class="text-uppercase">Post 1</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio quo nisi quisquam optio magni, sequi suscipit laboriosam reprehenderit, ex temporibus neque molestias, recusandae minus similique. Nobis harum ipsam sint neque!</p>
                     <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">ReadMore</button>
-            </div>
-            <div class="col-sm-4 wow bounce">                
+                </div>
+                <div class="col-sm-4 wow bounce">
                     <div class="blog_box_wrapper">
                         <img src="http://sktthemesdemo.net/blendit/wp-content/uploads/2013/10/4076191146_3e3c754b05_z.jpg" alt="Paris" class="img-responsive">
                         <div class="cat_comments">
                             <h5><i class="fa fa-list"></i><a href="">Blog</a></h5>
-                            <h5><i class="fa fa-comments"></i><span>1 Comments</span></h5>                            
+                            <h5><i class="fa fa-comments"></i><span>1 Comments</span></h5>
                         </div>
                     </div>
                     <h4 class="text-uppercase">Post 1</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio quo nisi quisquam optio magni, sequi suscipit laboriosam reprehenderit, ex temporibus neque molestias, recusandae minus similique. Nobis harum ipsam sint neque!</p>
                     <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">ReadMore</button>
-            </div>
-            <div class="col-sm-4 wow bounce ">                
+                </div>
+                <div class="col-sm-4 wow bounce ">
                     <div class="blog_box_wrapper">
                         <img src="http://sktthemesdemo.net/blendit/wp-content/uploads/2013/10/4076191146_3e3c754b05_z.jpg" alt="Paris" class="img-responsive">
                         <div class="cat_comments">
                             <h5><i class="fa fa-list"></i><a href="">Blog</a></h5>
-                            <h5><i class="fa fa-comments"></i><span>1 Comments</span></h5>                            
+                            <h5><i class="fa fa-comments"></i><span>1 Comments</span></h5>
                         </div>
                     </div>
                     <h4 class="text-uppercase">Post 1</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio quo nisi quisquam optio magni, sequi suscipit laboriosam reprehenderit, ex temporibus neque molestias, recusandae minus similique. Nobis harum ipsam sint neque!</p>
                     <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">ReadMore</button>
-            </div>
-            
-            
-        </div>
-    </div>
-</section>
-
-<section id="team">
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-md-12">
-                <h3 class="text-uppercase title"> Team members<hr class="title_hr"> </h3>
-            </div>
-            <div class="col-sm-3 wow bounceInUp">
-                <div class="team_box">
-                    <img src="http://sktthemesdemo.net/blendit/wp-content/uploads/2013/10/rophel-stuart.jpg" alt="Paris" class="img-resoponsive">
-                    <p><strong>Jane Doe</strong></p>
-                    <p>Designer</p>
-                    <ul class="list-inline team_member_social">
-                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                        <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                        <li><a href=""><i class="fa fa-instagra"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-3 wow bounceInUp">
-                <div class="team_box">
-                    <img src="http://sktthemesdemo.net/blendit/wp-content/uploads/2013/10/rophel-stuart.jpg" alt="Paris" class="img-resoponsive">
-                    <p><strong>Jane Doe</strong></p>
-                    <p>Designer</p>
-                    <ul class="list-inline team_member_social">
-                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                        <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                        <li><a href=""><i class="fa fa-instagra"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-3 wow bounceInUp">
-                <div class="team_box">
-                    <img src="http://sktthemesdemo.net/blendit/wp-content/uploads/2013/10/rophel-stuart.jpg" alt="Paris" class="img-resoponsive">
-                    <p><strong>Jane Doe</strong></p>
-                    <p>Designer</p>
-                    <ul class="list-inline team_member_social">
-                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                        <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                        <li><a href=""><i class="fa fa-instagra"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-3 wow bounceInUp">
-                <div class="team_box">
-                    <img src="http://sktthemesdemo.net/blendit/wp-content/uploads/2013/10/rophel-stuart.jpg" alt="Paris" class="img-resoponsive">
-                    <p><strong>Jane Doe</strong></p>
-                    <p>Designer</p>
-                    <ul class="list-inline team_member_social">
-                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                        <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                        <li><a href=""><i class="fa fa-instagra"></i></a></li>
-                    </ul>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    <section id="team">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h3 class="text-uppercase title"> Team members<hr class="title_hr"> </h3>
+                </div>
+                <div class="col-sm-3 wow bounceInUp">
+                    <div class="team_box">
+                        <img src="http://sktthemesdemo.net/blendit/wp-content/uploads/2013/10/rophel-stuart.jpg" alt="Paris" class="img-resoponsive">
+                        <p><strong>Jane Doe</strong></p>
+                        <p>Designer</p>
+                        <ul class="list-inline team_member_social">
+                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                            <li><a href=""><i class="fa fa-instagra"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-3 wow bounceInUp">
+                    <div class="team_box">
+                        <img src="http://sktthemesdemo.net/blendit/wp-content/uploads/2013/10/rophel-stuart.jpg" alt="Paris" class="img-resoponsive">
+                        <p><strong>Jane Doe</strong></p>
+                        <p>Designer</p>
+                        <ul class="list-inline team_member_social">
+                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                            <li><a href=""><i class="fa fa-instagra"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-3 wow bounceInUp">
+                    <div class="team_box">
+                        <img src="http://sktthemesdemo.net/blendit/wp-content/uploads/2013/10/rophel-stuart.jpg" alt="Paris" class="img-resoponsive">
+                        <p><strong>Jane Doe</strong></p>
+                        <p>Designer</p>
+                        <ul class="list-inline team_member_social">
+                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                            <li><a href=""><i class="fa fa-instagra"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-3 wow bounceInUp">
+                    <div class="team_box">
+                        <img src="http://sktthemesdemo.net/blendit/wp-content/uploads/2013/10/rophel-stuart.jpg" alt="Paris" class="img-resoponsive">
+                        <p><strong>Jane Doe</strong></p>
+                        <p>Designer</p>
+                        <ul class="list-inline team_member_social">
+                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                            <li><a href=""><i class="fa fa-instagra"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="container text-center">
+            <h3 class="text-uppercase title"> contact us<hr class="title_hr"> </h3>
+            <div class="row">
+                <div class="col-md-9">
+                    <h3 class="text-left">Feedback Form</h3>
+                    <form action="">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="name" placeholder="Name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="email" placeholder="Name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="phome" placeholder="Name">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <textarea name="" id="" cols="30" rows="7"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-3 text-left">
+                    <h3 class="">Address</h3>
+                    <h5>Blendit, Donec Rutrum, 1234 N Duis lacinia velit,123 Magna, OR 4567</h5>
+                    <hr>
+                    <h5>PHONE: +088 123 4567 890</h5>
+                    <h5>EMAIL: info@blendit.com</h5>
+                    <hr>
+                    <h5>WORKING HOURS: <br>Monday to Friday 10.00A.M. to 7.00P.M.</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="connect">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="connect_us list-inline text-center">
+                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="contact">
-    <div class="container row col-md-12 text-center">
-        <h3 class="text-uppercase title"> contact us<hr class="title_hr"> </h3>
-    </div>
-</div>
-{% endfor %} {% endblock %}
+
+    <section id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-left">
+                    <ul class="list-inline foot_links">
+                        {% for keys,item in menu.get_items %}
+                            <li class="page-scroll"><a href="#{{item.title | lower}}">{{item.title}}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="col-md-6 text-right">
+                    <span>© 2015 Blendit. All Rights Reserved.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endfor %} {% endblock %}
