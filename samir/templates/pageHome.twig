@@ -1,257 +1,208 @@
 {% extends "base.twig" %} {% block content %} {% for key,item in post %}
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#myPage"><img src="{{logo.url}}" alt="logo"></a>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#myPage"><img src="{{logo.url}}" alt="logo"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    {% for keys,item in menu.get_items %}
+                    <li class="page-scroll"><a href="#{{item.title | lower}}">{{item.title}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right">
-                {% for keys,item in menu.get_items %}
-                <li class="page-scroll"><a href="#{{item.title | lower}}">{{item.title}}</a></li>
+    </nav>
+    <div class="slider-area">
+        <div class="pogoSlider">
+            {% for post in slider %}
+            <div class="pogoSlider-slide" data-transition="fade" data-duration="1500" style="background:url('{{Image(post.background).src}}') no-repeat scroll 0 0 / cover;">
+                <h2 class="pogoSlider-slide-element" data-in="slideDown" data-out="fade" data-duration="700">{{post.main_text}}</h2>
+                <P class="pogoSlider-slide-element" data-in="expand" data-out="fade" data-duration="1500">{{post.small_text}}</P>
+                <div class="pogoSlider-slide-elemen"><a href="#reservation-form-modal" class="btn btn-primary reservation_box">Reservation</a></div>
+                {#
+                <div class="pogoSlider-slide-element" data-in="slideUp" data-out="flipX" data-duration="700"><a href="#reservation-form-modal" class="btn btn-primary reservation_box">Reservation</a></div> #}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <section id="about" class="whoAreWe">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 side_text wow slideIneft">
+                    <h3 class="text-uppercase title" style="margin:0;">who are we <hr class="title_hr">  </h3>
+                    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae est at dolor auctor faucibus. Aenean hendrerit lorem eget nisi vulputate, vitae fringilla ligula dignissim. Phasellus feugiat quam efficitur, faucibus augue nec, aliquam nulla. Maecenas lectus elit, dignissim nec volutpat eu, lacinia vitae diam. Nullam ac magna at risus faucibus pulvinar. Etiam congue felis sapien, viverra pellentesque libero porta iaculis. Sed et condimentum velit.</p>
+                    <div class="btn btn-blank">What We do</div>
+                </div>
+                <div class="col-md-6 side_image wow slideInRight">
+                    <img src="http://sktthemesdemo.net/blendit/wp-content/themes/blendit/images/thumb_04.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="moreAboutUs">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h3 class="text-uppercase title">More about us<hr class="title_hr"> </h3>
+                </div>
+            </div>
+            <div class="row wow bounceInDown">
+                <div class="col-md-3 text-center">
+                    <div class="fourbox">
+                        <img src="http://sktthemesdemo.net/blendit/wp-content/themes/blendit/images/thumb_05.jpg" alt="" class="img-responsive text-center" style="margin:0 auto;">
+                        <h4 class="text-uppercase">awesone design</h4>
+                        <p>Donec a mattis augue. Fusce porttitor, risus ac tincidunt gravida, libero eros ullamcorper massa, ac fringilla felis magna id nisi. Vivamus tortor metus, venenatis</p>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="fourbox">
+                        <img src="http://sktthemesdemo.net/blendit/wp-content/themes/blendit/images/thumb_05.jpg" alt="" class="img-responsive text-center" style="margin:0 auto;">
+                        <h4 class="text-uppercase">awesone design</h4>
+                        <p>Donec a mattis augue. Fusce porttitor, risus ac tincidunt gravida, libero eros ullamcorper massa, ac fringilla felis magna id nisi. Vivamus tortor metus, venenatis</p>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="fourbox">
+                        <img src="http://sktthemesdemo.net/blendit/wp-content/themes/blendit/images/thumb_05.jpg" alt="" class="img-responsive text-center" style="margin:0 auto;">
+                        <h4 class="text-uppercase">awesone design</h4>
+                        <p>Donec a mattis augue. Fusce porttitor, risus ac tincidunt gravida, libero eros ullamcorper massa, ac fringilla felis magna id nisi. Vivamus tortor metus, venenatis</p>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="fourbox">
+                        <img src="http://sktthemesdemo.net/blendit/wp-content/themes/blendit/images/thumb_05.jpg" alt="" class="img-responsive text-center" style="margin:0 auto;">
+                        <h4 class="text-uppercase">awesone design</h4>
+                        <p>Donec a mattis augue. Fusce porttitor, risus ac tincidunt gravida, libero eros ullamcorper massa, ac fringilla felis magna id nisi. Vivamus tortor metus, venenatis</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="CoreFeature">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="text-uppercase title text-left" style="margin:0"> core features<hr class="title_hr"> </h3>
+                    <h3 class="highlighted"> Duis quis laoreet neque. Nulla ut auctor Donec est ligula,consequat</h3>
+                    <p> Duis quis laoreet neque. Nulla ut auctor velit. Donec est ligula, consequat et lacus egestas, blandit egestas nunc. Praesent vestibulum ex nec neque eleifend, non commodo dolor scelerisque. Donec feugiat magna elit, quis gravida est luctus at. Mauris dictum ornare dui ac lobortis. Praesent pharetra rutrum eros, eu mattis dolor interdum eget. Aenean aliquam suscipit fermentum. Maecenas cursus sodales ante id luctus. Etiam pharetra ipsum a accumsan iaculis. Integer ut sodales sapien. Sed a molestie odio. Sed tempus nisi vitae congue cursus. Ut a auctor nibh, non egestas arcu. Proin sed volutpat lectus, ac malesuada justo. Vivamus mollis ipsum ut enim gravida, sed volutpat massa finibus. Nam mi lorem, condimentum vel est id, pellentesque accumsan diam. Pellentesque venenatis quis mi sed commodo. Etiam semper dui sed quam egestas, vel interdum risus interdum.</p>
+                    <button class="btn btn-blank"> View more Features</button>
+                </div>
+                <div class="col-md-6">
+                    <img src="  http://sktthemesdemo.net/blendit/wp-content/themes/blendit/images/image-thum1.png" class="img-responsive" alt="features_screen">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h3 class="text-uppercase title">what we do <hr class="title_hr">  </h3>
+                    <h3 class="highlighted">Providing amazing services to our client worldwide</h3>
+                </div>
+                <div class="col-md-3 text-center wow bounceInDown">
+                    <div class="fourbox">
+                        <img src="http://sktthemesdemo.net/blendit/wp-content/themes/blendit/images/thumb_05.jpg" alt="" class="img-responsive text-center" style="margin:0 auto;">
+                        <h4 class="text-uppercase">awesone design</h4>
+                        <p>Donec a mattis augue. Fusce porttitor, risus ac tincidunt gravida, libero eros ullamcorper massa, ac fringilla felis magna id nisi. Vivamus tortor metus, venenatis</p>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center wow bounceInDown">
+                    <div class="fourbox">
+                        <img src="http://sktthemesdemo.net/blendit/wp-content/themes/blendit/images/thumb_05.jpg" alt="" class="img-responsive text-center" style="margin:0 auto;">
+                        <h4 class="text-uppercase">awesone design</h4>
+                        <p>Donec a mattis augue. Fusce porttitor, risus ac tincidunt gravida, libero eros ullamcorper massa, ac fringilla felis magna id nisi. Vivamus tortor metus, venenatis</p>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center wow bounceInDown">
+                    <div class="fourbox">
+                        <img src="http://sktthemesdemo.net/blendit/wp-content/themes/blendit/images/thumb_05.jpg" alt="" class="img-responsive text-center" style="margin:0 auto;">
+                        <h4 class="text-uppercase">awesone design</h4>
+                        <p>Donec a mattis augue. Fusce porttitor, risus ac tincidunt gravida, libero eros ullamcorper massa, ac fringilla felis magna id nisi. Vivamus tortor metus, venenatis</p>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center wow bounceInDown">
+                    <div class="fourbox">
+                        <img src="http://sktthemesdemo.net/blendit/wp-content/themes/blendit/images/thumb_05.jpg" alt="" class="img-responsive text-center" style="margin:0 auto;">
+                        <h4 class="text-uppercase">awesone design</h4>
+                        <p>Donec a mattis augue. Fusce porttitor, risus ac tincidunt gravida, libero eros ullamcorper massa, ac fringilla felis magna id nisi. Vivamus tortor metus, venenatis</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="ourSkills">
+        <div class="container">
+            <row>
+                <div class="col md-12 text-center">
+                    <h3 class="text-uppercase title">Our skills<hr class="title_hr"> </h3>
+                    <div class="skill">
+                        <p>HTML5</p>
+                        <div class="skill-bar skill1 wow slideInLeft animated" style="width:95%">
+                            <span class="skill-count1">95%</span>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <p>HTML5</p>
+                        <div class="skill-bar skill1 wow slideInLeft animated" style="width:65%">
+                            <span class="skill-count1">65%</span>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <p>HTML5</p>
+                        <div class="skill-bar skill1 wow slideInLeft animated" style="width:25%">
+                            <span class="skill-count1">25%</span>
+                        </div>
+                    </div>
+                </div>
+            </row>
+        </div>
+    </section>
+    <section id="slider">
+        <container>
+            <row>
+                <div class="col-md-12 text-center">
+                    <h3 class="text-uppercase title"> what client said<hr class="title_hr"> </h3>
+                </div>
+            </row>
+        </container>
+    </section>
+    <section id="portfolio">
+        <div class="container-fluid ">
+            <div class="col-md-12">
+                <h3 class="text-uppercase title">works we did<hr class="title_hr"> </h3>
+            </div>
+            <div class="main">
+                <section id="myBtnContainer" class="text-center">
+                    <button class="btn-filter active" onclick="filterSelection(all)">All</button>
+                    {% for key,post in works %} 
+                        
+                            <button class="btn-filter" onclick="filterSelection('{{post | lower }}')">{{post}}</button>
+                        
+                    
+                    {% endfor %}
+                </section>
+            </div>
+            <!-- Portfolio Gallery Grid -->
+            <div class="row wow bounceIn">
+                {% for key,post in works_posts %} 
+                    <div class="column {{post}}">
+                        <div class="content">
+                            <img src="{{Image(post.image).src}}" alt="Mountains" style="width:100%">
+                            <h4 class="hide">Mountains</h4>
+                        </div>
+                    </div>
                 {% endfor %}
-            </ul>
-        </div>
-    </div>
-</nav>
-<div class="slider-area">
-    <div class="pogoSlider">
-        {% for post in slider %}
-        <div class="pogoSlider-slide" data-transition="fade" data-duration="1500" style="background:url('{{Image(post.background).src}}') no-repeat scroll 0 0 / cover;">
-            <h2 class="pogoSlider-slide-element" data-in="slideDown" data-out="fade" data-duration="700">{{post.main_text}}</h2>
-            <P class="pogoSlider-slide-element" data-in="expand" data-out="fade" data-duration="1500">{{post.small_text}}</P>
-            <div class="pogoSlider-slide-elemen"><a href="#reservation-form-modal" class="btn btn-primary reservation_box">Reservation</a></div>
-            {#
-            <div class="pogoSlider-slide-element" data-in="slideUp" data-out="flipX" data-duration="700"><a href="#reservation-form-modal" class="btn btn-primary reservation_box">Reservation</a></div> #}
-        </div>
-        {% endfor %}
-    </div>
-</div>
+            </div>
 
-<section id="about" class="whoAreWe">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 side_text wow slideIneft">
-                <h3 class="text-uppercase title" style="margin:0;">who are we <hr class="title_hr">  </h3>
-                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae est at dolor auctor faucibus. Aenean hendrerit lorem eget nisi vulputate, vitae fringilla ligula dignissim. Phasellus feugiat quam efficitur, faucibus augue nec, aliquam nulla. Maecenas lectus elit, dignissim nec volutpat eu, lacinia vitae diam. Nullam ac magna at risus faucibus pulvinar. Etiam congue felis sapien, viverra pellentesque libero porta iaculis. Sed et condimentum velit.</p>
-                <div class="btn btn-blank">What We do</div>
-            </div>
-            <div class="col-md-6 side_image wow slideInRight">
-                <img src="http://sktthemesdemo.net/blendit/wp-content/themes/blendit/images/thumb_04.jpg" alt="">
-            </div>
+                <!-- END GRID -->
         </div>
-    </div>
-</section>
-<section id="moreAboutUs">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <h3 class="text-uppercase title">More about us<hr class="title_hr"> </h3>
-            </div>
-        </div>
-        <div class="row wow bounceInDown">
-            <div class="col-md-3 text-center">
-                <div class="fourbox">
-                    <img src="http://sktthemesdemo.net/blendit/wp-content/themes/blendit/images/thumb_05.jpg" alt="" class="img-responsive text-center" style="margin:0 auto;">
-                    <h4 class="text-uppercase">awesone design</h4>
-                    <p>Donec a mattis augue. Fusce porttitor, risus ac tincidunt gravida, libero eros ullamcorper massa, ac fringilla felis magna id nisi. Vivamus tortor metus, venenatis</p>
-                </div>
-            </div>
-            <div class="col-md-3 text-center">
-                <div class="fourbox">
-                    <img src="http://sktthemesdemo.net/blendit/wp-content/themes/blendit/images/thumb_05.jpg" alt="" class="img-responsive text-center" style="margin:0 auto;">
-                    <h4 class="text-uppercase">awesone design</h4>
-                    <p>Donec a mattis augue. Fusce porttitor, risus ac tincidunt gravida, libero eros ullamcorper massa, ac fringilla felis magna id nisi. Vivamus tortor metus, venenatis</p>
-                </div>
-            </div>
-            <div class="col-md-3 text-center">
-                <div class="fourbox">
-                    <img src="http://sktthemesdemo.net/blendit/wp-content/themes/blendit/images/thumb_05.jpg" alt="" class="img-responsive text-center" style="margin:0 auto;">
-                    <h4 class="text-uppercase">awesone design</h4>
-                    <p>Donec a mattis augue. Fusce porttitor, risus ac tincidunt gravida, libero eros ullamcorper massa, ac fringilla felis magna id nisi. Vivamus tortor metus, venenatis</p>
-                </div>
-            </div>
-            <div class="col-md-3 text-center">
-                <div class="fourbox">
-                    <img src="http://sktthemesdemo.net/blendit/wp-content/themes/blendit/images/thumb_05.jpg" alt="" class="img-responsive text-center" style="margin:0 auto;">
-                    <h4 class="text-uppercase">awesone design</h4>
-                    <p>Donec a mattis augue. Fusce porttitor, risus ac tincidunt gravida, libero eros ullamcorper massa, ac fringilla felis magna id nisi. Vivamus tortor metus, venenatis</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section id="CoreFeature">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h3 class="text-uppercase title text-left" style="margin:0"> core features<hr class="title_hr"> </h3>
-                <h3 class="highlighted"> Duis quis laoreet neque. Nulla ut auctor Donec est ligula,consequat</h3>
-                <p> Duis quis laoreet neque. Nulla ut auctor velit. Donec est ligula, consequat et lacus egestas, blandit egestas nunc. Praesent vestibulum ex nec neque eleifend, non commodo dolor scelerisque. Donec feugiat magna elit, quis gravida est luctus at. Mauris dictum ornare dui ac lobortis. Praesent pharetra rutrum eros, eu mattis dolor interdum eget. Aenean aliquam suscipit fermentum. Maecenas cursus sodales ante id luctus. Etiam pharetra ipsum a accumsan iaculis. Integer ut sodales sapien. Sed a molestie odio. Sed tempus nisi vitae congue cursus. Ut a auctor nibh, non egestas arcu. Proin sed volutpat lectus, ac malesuada justo. Vivamus mollis ipsum ut enim gravida, sed volutpat massa finibus. Nam mi lorem, condimentum vel est id, pellentesque accumsan diam. Pellentesque venenatis quis mi sed commodo. Etiam semper dui sed quam egestas, vel interdum risus interdum.</p>
-                <button class="btn btn-blank"> View more Features</button>
-            </div>
-            <div class="col-md-6">
-                <img src="  http://sktthemesdemo.net/blendit/wp-content/themes/blendit/images/image-thum1.png" class="img-responsive" alt="features_screen">
-            </div>
-        </div>
-    </div>
-</section>
-<section id="services">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <h3 class="text-uppercase title">what we do <hr class="title_hr">  </h3>
-                <h3 class="highlighted">Providing amazing services to our client worldwide</h3>
-            </div>
-            <div class="col-md-3 text-center wow bounceInDown">
-                <div class="fourbox">
-                    <img src="http://sktthemesdemo.net/blendit/wp-content/themes/blendit/images/thumb_05.jpg" alt="" class="img-responsive text-center" style="margin:0 auto;">
-                    <h4 class="text-uppercase">awesone design</h4>
-                    <p>Donec a mattis augue. Fusce porttitor, risus ac tincidunt gravida, libero eros ullamcorper massa, ac fringilla felis magna id nisi. Vivamus tortor metus, venenatis</p>
-                </div>
-            </div>
-            <div class="col-md-3 text-center wow bounceInDown">
-                <div class="fourbox">
-                    <img src="http://sktthemesdemo.net/blendit/wp-content/themes/blendit/images/thumb_05.jpg" alt="" class="img-responsive text-center" style="margin:0 auto;">
-                    <h4 class="text-uppercase">awesone design</h4>
-                    <p>Donec a mattis augue. Fusce porttitor, risus ac tincidunt gravida, libero eros ullamcorper massa, ac fringilla felis magna id nisi. Vivamus tortor metus, venenatis</p>
-                </div>
-            </div>
-            <div class="col-md-3 text-center wow bounceInDown">
-                <div class="fourbox">
-                    <img src="http://sktthemesdemo.net/blendit/wp-content/themes/blendit/images/thumb_05.jpg" alt="" class="img-responsive text-center" style="margin:0 auto;">
-                    <h4 class="text-uppercase">awesone design</h4>
-                    <p>Donec a mattis augue. Fusce porttitor, risus ac tincidunt gravida, libero eros ullamcorper massa, ac fringilla felis magna id nisi. Vivamus tortor metus, venenatis</p>
-                </div>
-            </div>
-            <div class="col-md-3 text-center wow bounceInDown">
-                <div class="fourbox">
-                    <img src="http://sktthemesdemo.net/blendit/wp-content/themes/blendit/images/thumb_05.jpg" alt="" class="img-responsive text-center" style="margin:0 auto;">
-                    <h4 class="text-uppercase">awesone design</h4>
-                    <p>Donec a mattis augue. Fusce porttitor, risus ac tincidunt gravida, libero eros ullamcorper massa, ac fringilla felis magna id nisi. Vivamus tortor metus, venenatis</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section id="ourSkills">
-    <div class="container">
-        <row>
-            <div class="col md-12 text-center">
-                <h3 class="text-uppercase title">Our skills<hr class="title_hr"> </h3>
-                <div class="skill">
-                    <p>HTML5</p>
-                    <div class="skill-bar skill1 wow slideInLeft animated" style="width:95%">
-                        <span class="skill-count1">95%</span>
-                    </div>
-                </div>
-                <div class="skill">
-                    <p>HTML5</p>
-                    <div class="skill-bar skill1 wow slideInLeft animated" style="width:65%">
-                        <span class="skill-count1">65%</span>
-                    </div>
-                </div>
-                <div class="skill">
-                    <p>HTML5</p>
-                    <div class="skill-bar skill1 wow slideInLeft animated" style="width:25%">
-                        <span class="skill-count1">25%</span>
-                    </div>
-                </div>
-            </div>
-        </row>
-    </div>
-</section>
-<section id="slider">
-    <container>
-        <row>
-            <div class="col-md-12 text-center">
-                <h3 class="text-uppercase title"> what client said<hr class="title_hr"> </h3>
-            </div>
-        </row>
-    </container>
-</section>
-<section id="portfolio">
-    <div class="container-fluid ">
-        <div class="col-md-12">
-            <h3 class="text-uppercase title">works we did<hr class="title_hr"> </h3>
-        </div>
-        <div class="main">
-            <section id="myBtnContainer" class="text-center">
-                {% for key,post in works %} {% if var == 0 %}
-                <button class="btn-filter active" onclick="filterSelection(all)">All</button>
-                {% else %}
-                <button class="btn-filter" onclick="filterSelection('{{post}}')">{{post}}</button>
-                {% endif %} {% set var = var + 1 %} {% endfor %}
-                <!-- <button class="btn-filter active" onclick="filterSelection('all')"> Show all</button>
-                <button class="btn-filter" onclick="filterSelection('nature')"> Nature</button>
-                <button class="btn-filter" onclick="filterSelection('cars')"> Cars</button>
-                <button class="btn-filter" onclick="filterSelection('people')"> People</button> -->
-        </div>
-        <!-- Portfolio Gallery Grid -->
-        <div class="row wow bounceIn">
-            <div class="column nature">
-                <div class="content">
-                    <img src="https://www.w3schools.com/w3images/mountains.jpg" alt="Mountains" style="width:100%">
-                    <h4 class="hide">Mountains</h4>
-                </div>
-            </div>
-            <div class="column nature">
-                <div class="content">
-                    <img src="https://www.w3schools.com/w3images/lights.jpg" alt="Lights" style="width:100%">
-                    <h4 class="hide">Lights</h4>
-                </div>
-            </div>
-            <div class="column nature">
-                <div class="content">
-                    <img src="https://www.w3schools.com/w3images/nature.jpg" alt="Nature" style="width:100%">
-                    <h4 class="hide">Forest</h4>
-                </div>
-            </div>
-            <div class="column cars">
-                <div class="content">
-                    <img src="https://www.w3schools.com/w3images/cars1.jpg" alt="Car" style="width:100%">
-                    <h4 class="hide">Retro</h4>
-                </div>
-            </div>
-            <div class="column cars">
-                <div class="content">
-                    <img src="https://www.w3schools.com/w3images/cars2.jpg" alt="Car" style="width:100%">
-                    <h4 class="hide">Fast</h4>
-                </div>
-            </div>
-            <div class="column cars">
-                <div class="content">
-                    <img src="https://www.w3schools.com/w3images/cars3.jpg" alt="Car" style="width:100%">
-                    <h4 class="hide">Classic</h4>
-                </div>
-            </div>
-            <div class="column people">
-                <div class="content">
-                    <img src="https://www.w3schools.com/w3images/people1.jpg" alt="Car" style="width:100%">
-                    <h4 class="hide">Girl</h4>
-                </div>
-            </div>
-            <div class="column people">
-                <div class="content">
-                    <img src="https://www.w3schools.com/w3images/people2.jpg" alt="Car" style="width:100%">
-                    <h4 class="hide">Man</h4>
-                </div>
-            </div>
-            <div class="column people">
-                <div class="content">
-                    <img src="https://www.w3schools.com/w3images/people3.jpg" alt="Car" style="width:100%">
-                    <h4 class="hide">Woman</h4>
-                </div>
-            </div>
-            <!-- END GRID -->
-        </div>
-        <!-- END MAIN -->
-    </div>
-    </div>
     </section>
     <section id="blog">
         <div class="container">
@@ -416,8 +367,6 @@
             </div>
         </div>
     </section>
-
-
     <section id="footer">
         <div class="container">
             <div class="row">
