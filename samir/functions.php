@@ -26,6 +26,16 @@ class StarterSite extends TimberSite {
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
 		register_nav_menus(array('main_menu' => 'Main Menu' ) );
+
+		if( function_exists('acf_add_options_page') ) {
+			acf_add_options_page(array(
+				'page_title' 	=> 'Theme General Settings',
+				'menu_title'	=> 'General Settings',
+				'menu_slug' 	=> 'theme-general-settings',
+				'capability'	=> 'edit_posts',
+				'redirect'		=> false
+			));
+		}
 		parent::__construct();
 	}
 
@@ -44,6 +54,13 @@ class StarterSite extends TimberSite {
 		$context['menu'] = new TimberMenu();
 		$context['main_menu'] = new TimberMenu('main_menu');
 		$context['site'] = $this;
+
+		$context['logo'] = get_field('logo','option');
+		$context['address'] = get_field('address','option');
+		$context['email'] = get_field('email','option');
+		$context['phone'] = get_field('phone','option');
+		$context['working_days'] = get_field('working_days','option');
+		$context['working_time'] = get_field('working_time','option');
 		return $context;
 	}
 

@@ -136,6 +136,10 @@ p.pogoSlider-slide-element {
 
 /* SKILL 2 */
 
+
+.navbar-brand>img{
+    height: 100%;
+}
 .nav-tabs li a {
     color: #777;
 }
@@ -150,17 +154,20 @@ p.pogoSlider-slide-element {
 .navbar {
     font-family: "Roboto Condensed", sans-serif;
     margin-bottom: 0;
-    background-color: #2d2d30;
+    background-color: #ffffff;
     border: 0;
     font-size: 15px !important;
     /*letter-spacing: 4px;*/
-    opacity: 0.9;
+    /*opacity: 0.9;*/
 }
 
 .navbar li a,
 .navbar .navbar-brand {
     color: #d5d5d5 !important;
     text-transform: uppercase;
+}
+.navbar .navbar-brand {
+    padding:8px !important
 }
 
 .navbar-nav li a:hover {

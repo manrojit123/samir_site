@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#myPage">Logo</a>
+            <a class="navbar-brand" href="#myPage"><img src="{{logo.url}}" alt="logo"></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
@@ -386,12 +386,12 @@
                 </div>
                 <div class="col-md-3 text-left">
                     <h3 class="">Address</h3>
-                    <h5>Blendit, Donec Rutrum, 1234 N Duis lacinia velit,123 Magna, OR 4567</h5>
+                    <h5>{{address}}</h5>
                     <hr>
-                    <h5>PHONE: +088 123 4567 890</h5>
-                    <h5>EMAIL: info@blendit.com</h5>
+                    <h5>PHONE: {{phone}}</h5>
+                    <h5>EMAIL: {{email}}</h5>
                     <hr>
-                    <h5>WORKING HOURS: <br>Monday to Friday 10.00A.M. to 7.00P.M.</h5>
+                    <h5>WORKING HOURS: <br>{{workind_days}} {{working_time}}</h5>
                 </div>
             </div>
         </div>
