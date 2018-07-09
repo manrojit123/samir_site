@@ -8,6 +8,8 @@ $context = Timber::get_context();
 $context['post'] = Timber::get_posts(); 
 $context['posts'] = Timber::get_posts('numnerposts=-1'); 
 
+$about_page_id = 7;
+$context['about'] = Timber::get_context('about', $about_page_id); 
 
 
 

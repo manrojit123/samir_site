@@ -29,12 +29,20 @@ class StarterSite extends TimberSite {
 
 		if( function_exists('acf_add_options_page') ) {
 			acf_add_options_page(array(
-				'page_title' 	=> 'Theme General Settings',
-				'menu_title'	=> 'General Settings',
+				'page_title' 	=> 'About Us',
+				'menu_title'	=> 'About',
+				'menu_slug' 	=> 'theme-about-us',
+				'capability'	=> 'edit_posts',
+				'redirect'		=> false
+			));
+			acf_add_options_page(array(
+				'page_title' 	=> 'Contact Info',
+				'menu_title'	=> 'Contact Info',
 				'menu_slug' 	=> 'theme-general-settings',
 				'capability'	=> 'edit_posts',
 				'redirect'		=> false
 			));
+
 		}
 		parent::__construct();
 	}
@@ -55,12 +63,28 @@ class StarterSite extends TimberSite {
 		$context['main_menu'] = new TimberMenu('main_menu');
 		$context['site'] = $this;
 
+		//about us
+		$context['who_are_we_brief'] = get_field('who_are_we_brief','option');
+		$context['who_are_we_detail'] = get_field('who_are_we_detail','option');
+		while ( have_rows('field_5b41d75432750', 'option') ) : the_row();
+		  	$who_are_we_list[] = [
+		      'name'  => get_sub_field('title'),
+		      'icon'  => get_sub_field('icon'),
+		      'brief'  => get_sub_field('brief'),
+		      'details'  => get_sub_field('details')
+		   	];
+		endwhile;
+		
+
+
+		//Contact us
 		$context['logo'] = get_field('logo','option');
 		$context['address'] = get_field('address','option');
 		$context['email'] = get_field('email','option');
 		$context['phone'] = get_field('phone','option');
 		$context['working_days'] = get_field('working_days','option');
 		$context['working_time'] = get_field('working_time','option');
+
 		return $context;
 	}
 

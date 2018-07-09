@@ -40,6 +40,16 @@ h3.title {
     border: 2px solid white;
     color: white;
 }
+.btn-fortex{
+    background: #073569;
+    color:#feb611;
+    transition: all 200ms ease-in;
+}
+.btn-fortex:hover{
+        background: #073569;
+    color:#ffffff;
+    transition: all 200ms ease-in;
+}
 
 p.highlighted {}
 
@@ -58,7 +68,7 @@ section {
 
 .slider-area {
     position: relative;
-    top: -25px;
+    /*top: -25px;*/
 }
 
 h2.pogoSlider-slide-element {
@@ -100,14 +110,14 @@ p.pogoSlider-slide-element {
     content: "";
     display: block;
     position: absolute;
-    background: #191919;
+    background: #073569;
     bottom: 0;
 }
 
 .skill-bar {
     width: 100%;
     height: 25px;
-    background: #f4392f;
+    background: #fec033;
     display: block;
     position: relative;
 }
@@ -163,7 +173,7 @@ p.pogoSlider-slide-element {
 
 .navbar li a,
 .navbar .navbar-brand {
-    color: #d5d5d5 !important;
+    color:#073569 !important;
     text-transform: uppercase;
 }
 .navbar .navbar-brand {
@@ -171,7 +181,7 @@ p.pogoSlider-slide-element {
 }
 
 .navbar-nav li a:hover {
-    color: #fff !important;
+        color:#001329 !important;
 }
 
 .navbar-nav li.active a {
@@ -197,7 +207,7 @@ p.pogoSlider-slide-element {
 }
 
 .pogoSlider {
-    height: 95vh;
+    height: 100vh;
     overflow: hidden;
     position: relative;
     text-align: center;
@@ -260,7 +270,7 @@ p.pogoSlider-slide-element {
 #services-box:hover,
 .fourbox:hover {
     border: 1px solid transparent;
-    border-bottom: 2px solid#ff5c55;
+    border-bottom: 2px solid #fec033;
     background-color: #f6f6f8;
     cursor: pointer;
 }
@@ -271,14 +281,10 @@ p.pogoSlider-slide-element {
     color: #ff5c55;
 }
 
-#about {
-    margin-top: 25px;
-    margin-bottom: 25px;
-}
 
 
 .whoAreWe {
-    background: #ff554e;
+    background: #fec033;
     position: relative;
 }
 
@@ -304,10 +310,11 @@ p.pogoSlider-slide-element {
     top: 0;
     right: 0;
     bottom: 0;
-    width: 100%;
+    width: auto;
     float: right;
     overflow: hidden;
     margin: 0;
+    height: 100%;
 }
 
 #moreAboutUs {
@@ -317,6 +324,13 @@ p.pogoSlider-slide-element {
 
 #moreAboutUs .fourbox {
     border-bottom: 2px solid #dedee0;
+    padding:15px 5px;
+    border:1px solid transparent
+}
+#services .fourbox{
+    padding:15px 5px;
+    border:1px solid transparent
+
 }
 
 #slider {
@@ -327,7 +341,10 @@ p.pogoSlider-slide-element {
     background-size: cover;
     min-height: 35vh;
 }
-
+#slider .title,#slider .title_hr{
+    color:white;
+    border-color:white;
+}
 .blog_box_wrapper {
     position: relative;
 }
@@ -335,7 +352,7 @@ p.pogoSlider-slide-element {
 .cat_comments {
     position: absolute;
     bottom: 0;
-    background: rgba(255, 85, 78, 0.8);
+    background:rgba(254, 192, 51, 0.8);
     width: 100%;
     height: 45px;
     padding: 0px 12px;
@@ -383,7 +400,7 @@ p.pogoSlider-slide-element {
 }
 
 .team_member_social li {
-    border-right: 1px solid red;
+    border-right: 1px solid #073569;
 }
 
 .team_member_social li:last-child {
@@ -442,7 +459,7 @@ p.pogoSlider-slide-element {
 }
 
 .btn-filter.active {
-    background-color: #ff554e;
+    background-color: #fec033;
     color: white;
 }
 
@@ -467,6 +484,7 @@ footer a:hover {
 
 textarea {
     resize: none;
+    width: 100%;
 }
 #connect{
     background-image: url(http://sktthemesdemo.net/blendit/wp-content/themes/blendit/images/social-bg.png);
@@ -488,5 +506,5 @@ textarea {
 }
 
 #footer .foot_links li a{
-    color:#ff554e;
+    color:#fec033;
 }

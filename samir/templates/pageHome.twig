@@ -12,7 +12,11 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
                     {% for keys,item in menu.get_items %}
-                    <li class="page-scroll"><a href="#{{item.title | lower}}">{{item.title}}</a></li>
+                    {% if keys == 0 %}
+                        <li class="page-scroll active"><a href="#{{item.title | lower}}">{{item.title}}</a></li>
+                    {% else %}
+                        <li class="page-scroll"><a href="#{{item.title | lower}}">{{item.title}}</a></li>
+                    {% endif %}
                     {% endfor %}
                 </ul>
             </div>
@@ -24,9 +28,9 @@
             <div class="pogoSlider-slide" data-transition="fade" data-duration="1500" style="background:url('{{Image(post.background).src}}') no-repeat scroll 0 0 / cover;">
                 <h2 class="pogoSlider-slide-element" data-in="slideDown" data-out="fade" data-duration="700">{{post.main_text}}</h2>
                 <P class="pogoSlider-slide-element" data-in="expand" data-out="fade" data-duration="1500">{{post.small_text}}</P>
-                <div class="pogoSlider-slide-elemen"><a href="#reservation-form-modal" class="btn btn-primary reservation_box">Reservation</a></div>
+                <div class="pogoSlider-slide-elemen"><a href="#reservation-form-modal" class="btn btn-fortex reservation_box">Reservation</a></div>
                 {#
-                <div class="pogoSlider-slide-element" data-in="slideUp" data-out="flipX" data-duration="700"><a href="#reservation-form-modal" class="btn btn-primary reservation_box">Reservation</a></div> #}
+                <div class="pogoSlider-slide-element" data-in="slideUp" data-out="flipX" data-duration="700"><a href="#reservation-form-modal" class="btn btn-fortex reservation_box">Reservation</a></div> #}
             </div>
             {% endfor %}
         </div>
@@ -36,7 +40,7 @@
             <div class="row">
                 <div class="col-md-6 side_text wow slideIneft">
                     <h3 class="text-uppercase title" style="margin:0;">who are we <hr class="title_hr">  </h3>
-                    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae est at dolor auctor faucibus. Aenean hendrerit lorem eget nisi vulputate, vitae fringilla ligula dignissim. Phasellus feugiat quam efficitur, faucibus augue nec, aliquam nulla. Maecenas lectus elit, dignissim nec volutpat eu, lacinia vitae diam. Nullam ac magna at risus faucibus pulvinar. Etiam congue felis sapien, viverra pellentesque libero porta iaculis. Sed et condimentum velit.</p>
+                    <p class="text-white">{{who_are_we_brief}}.</p>
                     <div class="btn btn-blank">What We do</div>
                 </div>
                 <div class="col-md-6 side_image wow slideInRight">
@@ -44,6 +48,14 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <section>   
+        {% for posts in who_are_we_list %}
+            {{posts.title}}{{posts.icon}}{{posts.brief}}{{details}}
+        {% endfor %}
+
+
     </section>
     <section id="moreAboutUs">
         <div class="container">
@@ -180,7 +192,7 @@
             </div>
             <div class="main">
                 <section id="myBtnContainer" class="text-center">
-                    <button class="btn-filter active" onclick="filterSelection(all)">All</button>
+                    <button class="btn-filter active" onclick="filterSelection('all')">All</button>
                     {% for key,post in works %} 
                         
                             <button class="btn-filter" onclick="filterSelection('{{post | lower }}')">{{post}}</button>
@@ -192,7 +204,7 @@
             <!-- Portfolio Gallery Grid -->
             <div class="row wow bounceIn">
                 {% for key,post in works_posts %} 
-                    <div class="column {{post}}">
+                    <div class="column {{post.type}}">
                         <div class="content">
                             <img src="{{Image(post.image).src}}" alt="Mountains" style="width:100%">
                             <h4 class="hide">Mountains</h4>
@@ -220,7 +232,7 @@
                     </div>
                     <h4 class="text-uppercase">Post 1</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio quo nisi quisquam optio magni, sequi suscipit laboriosam reprehenderit, ex temporibus neque molestias, recusandae minus similique. Nobis harum ipsam sint neque!</p>
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">ReadMore</button>
+                    <button class="btn btn-fortex" data-toggle="modal" data-target="#myModal">ReadMore</button>
                 </div>
                 <div class="col-sm-4 wow bounce">
                     <div class="blog_box_wrapper">
@@ -232,7 +244,7 @@
                     </div>
                     <h4 class="text-uppercase">Post 1</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio quo nisi quisquam optio magni, sequi suscipit laboriosam reprehenderit, ex temporibus neque molestias, recusandae minus similique. Nobis harum ipsam sint neque!</p>
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">ReadMore</button>
+                    <button class="btn btn-fortex" data-toggle="modal" data-target="#myModal">ReadMore</button>
                 </div>
                 <div class="col-sm-4 wow bounce ">
                     <div class="blog_box_wrapper">
@@ -244,7 +256,7 @@
                     </div>
                     <h4 class="text-uppercase">Post 1</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio quo nisi quisquam optio magni, sequi suscipit laboriosam reprehenderit, ex temporibus neque molestias, recusandae minus similique. Nobis harum ipsam sint neque!</p>
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">ReadMore</button>
+                    <button class="btn btn-fortex" data-toggle="modal" data-target="#myModal">ReadMore</button>
                 </div>
             </div>
         </div>
